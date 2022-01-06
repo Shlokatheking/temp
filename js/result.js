@@ -1,5 +1,5 @@
 function back() {
-  window.location = "trial.html";
+  window.location = "index.html";
 }
 var str;
 function myFunction() {
