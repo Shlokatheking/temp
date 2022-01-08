@@ -12,7 +12,7 @@ let gp = 0;
 let cf = 0;
 let p = ["px", "py", "pz"];
 let d = ["dxy", "dyz", "dxz", "dx2y2", "dz2"];
-let orbitals = [  
+let orbitals = [
   "1s",
   "2s",
   "2p",
@@ -36,8 +36,6 @@ let orbitals = [
 let list = document.getElementById("splits");
 solve();
 function solve() {
-
-  
   if (basis_set == "3-21G") {
     split_valence2();
     return;
@@ -50,7 +48,6 @@ function solve() {
 
   if (basis_set == "6-21G") {
     split_valence();
-  
 
     return;
   }
@@ -208,15 +205,43 @@ function solve() {
       list.appendChild(dash);
     }
   }
-  var li = document.createElement("ul");
-  var li2 = document.createElement("ul");
-  li.style.listStyleType = "none";
-  li2.style.listStyleType = "none";
-  li.innerHTML = `<center> <p style="margin-right=100px;">TOTAL COUNT </center> <br> <center><b><h3 style="display: inline;">Gaussian Primitives</h3></b> <i class="fas fa-equals"></i> ${gp}</center>`;
-  li2.innerHTML = `<center><b> <h3 style="display: inline;">Contracted Functions</h3> </b><i class="fas fa-equals"></i> ${cf}</center>`;
+  // var li = document.createElement("ul");
+  // var li2 = document.createElement("ul");
+  // li.style.listStyleType = "none";
+  // li2.style.listStyleType = "none";
+  // li.innerHTML = `<center> <p style="margin-right=100px;">TOTAL COUNT </center> <br> <center><b><h3 style="display: inline;">Gaussian Primitives</h3></b> <i class="fas fa-equals"></i> ${gp}</center>`;
+  // li2.innerHTML = `<center><b> <h3 style="display: inline;">Contracted Functions</h3> </b><i class="fas fa-equals"></i> ${cf}</center>`;
 
-  list.appendChild(li);
-  list.appendChild(li2);
+  // list.appendChild(li);
+  // list.appendChild(li2);
+  let div1 = document.createElement("div");
+  div1.style["display"] = "flex";
+  div1.style["justifyContent"] = "center";
+  div1.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div1.style["marginTop"] = "10%";
+  else div1.style["marginTop"] = "2%";
+  div1.textContent = "TOTAL COUNT";
+  let body_result = document.getElementById("body");
+  body_result.appendChild(div1);
+  console.log(gp + " " + cf);
+  let div2 = document.createElement("div");
+  div2.style["display"] = "flex";
+  div2.style["justifyContent"] = "center";
+  div2.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div2.style["marginTop"] = "10%";
+  else div2.style["marginTop"] = "2%";
+  div2.innerHTML += `Gaussian Primitives = `;
+  div2.innerHTML += `${gp}`;
+  body_result.appendChild(div2);
+  let div3 = document.createElement("div");
+  div3.style["display"] = "flex";
+  div3.style["justifyContent"] = "center";
+  div3.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div3.style["marginTop"] = "10%";
+  else div3.style["marginTop"] = "2%";
+  div3.innerHTML += `Contracted Functions = `;
+  div3.innerHTML += `${cf}`;
+  body_result.appendChild(div3);
   console.log(gp + " " + cf);
 }
 function split_valence() {
@@ -550,18 +575,45 @@ function split_valence() {
       list.appendChild(dash);
     }
   }
-  var li = document.createElement("ul");
-  var li2 = document.createElement("ul");
-  li.style.listStyleType = "none";
-  li2.style.listStyleType = "none";
-  li.innerHTML = `<center> <p style="margin-right=100px;">TOTAL COUNT </center> <br> <center><b><h3 style="display: inline;">Gaussian Primitives</h3></b> <i class="fas fa-equals"></i> ${gp}</center>`;
-  li2.innerHTML = `<center><b> <h3 style="display: inline;">Contracted Functions</h3> </b><i class="fas fa-equals"></i> ${cf}</center>`;
-  
-  list.appendChild(li);
-  list.appendChild(li2);
+  // var li = document.createElement("ul");
+  // var li2 = document.createElement("ul");
+  // li.style.listStyleType = "none";
+  // li2.style.listStyleType = "none";
+  // li.innerHTML = `<center> <p style="margin-right=100px;">TOTAL COUNT </center> <br> <center><b><h3 style="display: inline;">Gaussian Primitives</h3></b> <i class="fas fa-equals"></i> ${gp}</center>`;
+  // li2.innerHTML = `<center><b> <h3 style="display: inline;">Contracted Functions</h3> </b><i class="fas fa-equals"></i> ${cf}</center>`;
+
+  // list.appendChild(li);
+  // list.appendChild(li2);
+  let div1 = document.createElement("div");
+  div1.style["display"] = "flex";
+  div1.style["justifyContent"] = "center";
+  div1.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div1.style["marginTop"] = "10%";
+  else div1.style["marginTop"] = "2%";
+  div1.textContent = "TOTAL COUNT";
+  let body_result = document.getElementById("body");
+  body_result.appendChild(div1);
+  console.log(gp + " " + cf);
+  let div2 = document.createElement("div");
+  div2.style["display"] = "flex";
+  div2.style["justifyContent"] = "center";
+  div2.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div2.style["marginTop"] = "10%";
+  else div2.style["marginTop"] = "2%";
+  div2.innerHTML += `Gaussian Primitives = `;
+  div2.innerHTML += `${gp}`;
+  body_result.appendChild(div2);
+  let div3 = document.createElement("div");
+  div3.style["display"] = "flex";
+  div3.style["justifyContent"] = "center";
+  div3.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div3.style["marginTop"] = "10%";
+  else div3.style["marginTop"] = "2%";
+  div3.innerHTML += `Contracted Functions = `;
+  div3.innerHTML += `${cf}`;
+  body_result.appendChild(div3);
   console.log(gp + " " + cf);
 }
-
 
 function split_valence2() {
   console.log("in function", nmap);
@@ -894,19 +946,45 @@ function split_valence2() {
       list.appendChild(dash);
     }
   }
-  var li = document.createElement("ul");
-  var li2 = document.createElement("ul");
-  li.style.listStyleType = "none";
-  li2.style.listStyleType = "none";
-  li.innerHTML = `<center> <p style="margin-right=100px;">TOTAL COUNT </center> <br> <center><b><h3 style="display: inline;">Gaussian Primitives</h3></b> <i class="fas fa-equals"></i> ${gp}</center>`;
-  li2.innerHTML = `<center><b> <h3 style="display: inline;">Contracted Functions</h3> </b><i class="fas fa-equals"></i> ${cf}</center>`;
+  // var li = document.createElement("ul");
+  // var li2 = document.createElement("ul");
+  // li.style.listStyleType = "none";
+  // li2.style.listStyleType = "none";
 
-  list.appendChild(li);
-  list.appendChild(li2);
+  // li.innerHTML = `<div style="display: flex; justify-content:center ;"><div>TOTAL COUNT </center> <br> <center><b><h3 style="display: inline;">Gaussian Primitives</h3></b> <i class="fas fa-equals"></i> ${gp}</div>`;
+  // li2.innerHTML = `<center><b> <h3 style="display: inline;">Contracted Functions</h3> </b><i class="fas fa-equals"></i> ${cf}</center>`;
+
+  // list.appendChild(li);
+  // list.appendChild(li2);
+  let div1 = document.createElement("div");
+  div1.style["display"] = "flex";
+  div1.style["justifyContent"] = "center";
+  div1.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div1.style["marginTop"] = "10%";
+  else div1.style["marginTop"] = "2%";
+  div1.textContent = "TOTAL COUNT";
+  let body_result = document.getElementById("body");
+  body_result.appendChild(div1);
   console.log(gp + " " + cf);
+  let div2 = document.createElement("div");
+  div2.style["display"] = "flex";
+  div2.style["justifyContent"] = "center";
+  div2.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div2.style["marginTop"] = "10%";
+  else div2.style["marginTop"] = "2%";
+  div2.innerHTML += `Gaussian Primitives = `;
+  div2.innerHTML += `${gp}`;
+  body_result.appendChild(div2);
+  let div3 = document.createElement("div");
+  div3.style["display"] = "flex";
+  div3.style["justifyContent"] = "center";
+  div3.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div3.style["marginTop"] = "10%";
+  else div3.style["marginTop"] = "2%";
+  div3.innerHTML += `Contracted Functions = `;
+  div3.innerHTML += `${cf}`;
+  body_result.appendChild(div3);
 }
-
-
 
 function split_valence3() {
   console.log("in function", nmap);
@@ -1239,15 +1317,49 @@ function split_valence3() {
       list.appendChild(dash);
     }
   }
-  var li = document.createElement("ul");
-  var li2 = document.createElement("ul");
-  li.style.listStyleType = "none";
-  li2.style.listStyleType = "none";
-  
-  li.innerHTML = `<center> <p style="margin-right=100px;"><img src="https://see.fontimg.com/api/renderfont4/eZOn3/eyJyIjoiZnMiLCJoIjozOSwidyI6MTI1MCwiZnMiOjMxLCJmZ2MiOiIjRjJFQkVCIiwiYmdjIjoiIzBFMDUyMiIsInQiOjF9/VG90YWwgQ291bnQ/party-confetti-regular.png" alt=""></center> <br> <center><b><h3 style="display: inline;">Gaussian Primitives</h3></b> <i class="fas fa-equals"></i> ${gp}</center>`;
-  li2.innerHTML = `<center><b> <h3 style="display: inline;">Contracted Functions</h3> </b><i class="fas fa-equals"></i> ${cf}</center>`;
-  
-  list.appendChild(li);
-  list.appendChild(li2);
+  // var li = document.createElement("ul");
+  // var li2 = document.createElement("ul");
+  // li.style.listStyleType = "none";
+  // li2.style.listStyleType = "none";
+
+  // li.innerHTML = `<center> <p style="margin-right=100px;"><img src="https://see.fontimg.com/api/renderfont4/eZOn3/eyJyIjoiZnMiLCJoIjozOSwidyI6MTI1MCwiZnMiOjMxLCJmZ2MiOiIjRjJFQkVCIiwiYmdjIjoiIzBFMDUyMiIsInQiOjF9/VG90YWwgQ291bnQ/party-confetti-regular.png" alt=""></center> <br> <center><b><h3 style="display: inline;">Gaussian Primitives</h3></b> <i class="fas fa-equals"></i> ${gp}</center>`;
+  // li2.innerHTML = `<center><b> <h3 style="display: inline;">Contracted Functions</h3> </b><i class="fas fa-equals"></i> ${cf}</center>`;
+
+  // list.appendChild(li);
+  // list.appendChild(li2);
+  // console.log(gp + " " + cf);
+  let div1 = document.createElement("div");
+  div1.style["display"] = "flex";
+  div1.style["justifyContent"] = "center";
+  div1.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div1.style["marginTop"] = "10%";
+  else div1.style["marginTop"] = "2%";
+  div1.textContent = "TOTAL COUNT";
+  let body_result = document.getElementById("body");
+  body_result.appendChild(div1);
   console.log(gp + " " + cf);
+  let div2 = document.createElement("div");
+  div2.style["display"] = "flex";
+  div2.style["justifyContent"] = "center";
+  div2.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div2.style["marginTop"] = "10%";
+  else div2.style["marginTop"] = "2%";
+  div2.innerHTML += `Gaussian Primitives = `;
+  div2.innerHTML += `${gp}`;
+  body_result.appendChild(div2);
+  let div3 = document.createElement("div");
+  div3.style["display"] = "flex";
+  div3.style["justifyContent"] = "center";
+  div3.style["fontSize"] = "100%";
+  if (document.body.clientWidth <= 820) div3.style["marginTop"] = "10%";
+  else div3.style["marginTop"] = "2%";
+  div3.innerHTML += `Contracted Functions = `;
+  div3.innerHTML += `${cf}`;
+  body_result.appendChild(div3);
 }
+let resDiv = document.createElement("div");
+resDiv.style["display"] = "flex";
+resDiv.style["justifyContent"] = "center";
+resDiv.style["marginTop"] = "20px";
+resDiv.innerHTML = `<button onclick="back()" style=" width: 200px; background-color: transparent; color: blanchedalmond; border-color: blanchedalmond; font-size: 32px;border-radius: 10px; padding: 5px; "> <i class="far fa-arrow-alt-circle-left"></i> <b>Go back</b> </button>`;
+document.getElementById("body").appendChild(resDiv);
